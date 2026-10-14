@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+server/data/leads.json
+server/data/leads.xlsx
+server/data/*.tmp
+.DS_Store

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: landora-real-estate
+    runtime: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "1"
+      - key: ADMIN_TOKEN
+        sync: false
+    disk:
+      name: landora-data
+      mountPath: /opt/render/project/src/server/data
+      sizeGB: 1
